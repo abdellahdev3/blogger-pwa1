@@ -1,4 +1,4 @@
-import { defineConfig } from "@/types/config";
+import type { Config } from './types';
 
 export default defineConfig({
   manifest: {
