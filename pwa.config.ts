@@ -1,43 +1,59 @@
 import type { Config } from './types';
 
 export default {
-  id: '/',
-  name: 'My Blog',
-  shortName: 'My Blog',
-  description: 'My blog description goes here...',
-  direction: 'auto',
-  language: 'en-US',
-  backgroundColor: '#fff',
-  themeColor: '#fff',
+  id: 'com.bac.feljib.dz.education',
+  name: 'Bac Feljib',
+  shortName: 'Bac Feljib',
+  description: 'منصة تعليمية جزائرية لطلاب البكالوريا: دروس، ملخصات، تمارين وحساب المعدل.',
+  direction: 'rtl',
+  language: 'ar-DZ',
+  backgroundColor: '#f8fafc',
+  themeColor: '#2447c7',
   display: 'standalone',
   orientation: 'natural',
   scope: '/',
   startUrl: '/?utm_source=homescreen',
   appleStatusBarStyle: 'black-translucent',
-  preferRelatedApplications: false,
-  shortcuts: [
+
+  // ✅ فعّل التفضيل للتطبيق الأصلي
+  preferRelatedApplications: true,
+  relatedApplications: [
     {
-      name: 'Shortcut 1',
-      shortName: 'Shortcut 1',
-      description: 'Shortcut 1 description goes here...',
-      url: '/search/label/shortcut-1?utm_source=homescreen',
-    },
-    {
-      name: 'Shortcut 2',
-      shortName: 'Shortcut 2',
-      description: 'Shortcut 2 description goes here...',
-      url: '/search/label/shortcut-2?utm_source=homescreen',
+      platform: 'play',
+      url: 'https://play.google.com/store/apps/details?id=com.bac.feljib.dz.education',
+      id: 'com.bac.feljib.dz.education',
     },
   ],
+
+  shortcuts: [
+    {
+      name: 'الدروس',
+      shortName: 'دروس',
+      description: 'دروس وملخصات البكالوريا',
+      url: '/p/lessons-and-summaries-bac?utm_source=homescreen',
+    },
+    {
+      name: 'التمارين',
+      shortName: 'تمارين',
+      description: 'تمارين محلولة للبكالوريا',
+      url: '/p/exercises-with-solution-bac?utm_source=homescreen',
+    },
+    {
+      name: 'العد التنازلي للبكالوريا',
+      shortName: 'العد التنازلي للبكالوريا',
+      description: 'العد التنازلي للبكالوريا',
+      url: '/p/bac-exam-countdown?utm_source=homescreen',
+    },
+  ],
+
   pwa: {
     logs: true,
-    // OneSignal is only available if you are using cloudflare workers
-    oneSignalEnabled: false, // To enable OneSignal, set this to true
+    oneSignalEnabled: false,
     oneSignalConfig: {
-      appId: '********-****-****-****-************', // Replace with your OneSignal App Id
+      appId: 'd9dd4395-8656-4f28-a0ef-e38f554b1c42',
       allowLocalhostAsSecureOrigin: true,
     },
   },
-  // Please replace with your blog url if you are using CDN (JsDelivr)
-  origin: 'https://bac-feljib.com',
+
+  origin: 'https://www.bac-feljib.com',
 } satisfies Config;
